@@ -7,10 +7,17 @@ app.secret_key = "MY_SUPER_SECRET_KEY"
 @app.route("/")
 def home():
 	return render_template("home.html")
-@app.route("/store")
+
+
+@app.route("/store" , methods = ['GET', 'POST'])
 def store():
 	return render_template("store.html")
+	
 
+
+@app.route("/cart")
+def cart():
+	return render_template("cart.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
