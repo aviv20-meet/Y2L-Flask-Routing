@@ -13,7 +13,7 @@ def home():
 def store():
 	return render_template("store.html", products = get_table() )
 
-@app.route("/add_to_cart/<integer:id>")
+@app.route("/add_to_cart/<id>")
 def add_to_cart(productID):
 	add_to_cart(id)
 	return render_template("cart.html")
