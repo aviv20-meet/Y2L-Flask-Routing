@@ -12,10 +12,10 @@ session = DBSession()
 
 def add_product(name, price, pic_link, des):
 	product_object = Product(
-		name,
-		price,
-		pic_link,
-		des)
+		name=name,
+		price = price,
+		picture_link =pic_link ,
+		description = des)
 	session.add(product_object)
 	session.commit()
 def edit_product(id, name,price,pic_link,des):
@@ -39,6 +39,12 @@ def get_product(id):
 	return product_object
 
 def add_to_cart(productID):
-	cart_object = Cart(productID)
+	cart_object = Cart(productID =productID )
 	session.add(cart_object)
 	session.commit()
+
+def get_cart():
+	cart_table = session.query(Cart).all()
+	return cart_table
+
+
